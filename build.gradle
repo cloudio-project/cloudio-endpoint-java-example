@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/cloudio-project/cloudio-endpoint-java")
+        credentials {
+            username = project.findProperty("gpr.user") ?: System.getenv("GPR_USER")
+            password = project.findProperty("gpr.key") ?: System.getenv("GPR_API_KEY")
+        }
+    }
+}
+
+dependencies {
+    implementation "ch.hevs.cloudio:cloudio-endpoint-java:0.2.0-SNAPSHOT"
+}
