@@ -12,7 +12,7 @@ public class demoEndpoint implements Runnable, CloudioEndpointListener{
     private double i;
 
     demoEndpoint() throws CloudioEndpointInitializationException, InvalidPropertyException, InvalidUuidException, DuplicateItemException {
-        myEndpoint = new CloudioEndpoint("your_UUID");
+        myEndpoint = new CloudioEndpoint("example");
 
         // listen to endpoint is online and endponit is offline events
         myEndpoint.addEndpointListener(this);
